@@ -1,0 +1,26 @@
+1、编译器JDK版本不能高于运行环境版本，比如1.6编译的jar，无法在JDK 1.5版本的系统上运行；
+2、JDK位数必须与dll位数保持一致，32位的JDK不能运行64位的DLL；
+3、64位JDK只能运行在64位操作系统上，32位JDK则没有限制；
+4、32位JDK与64位JDK编译出来的class都是一样的，区别在于能利用JVM内存的大小，64位可以达到4G；
+5、32位JDK与64位JDK编译出来的jar，是可以通用的；
+6、较高版本JDK编译的jar，不能在较低版本的JDK上运行。比如JDK1.8编译的版本不能在JDK1.5版本上运行，会报错：java.lang.unsupportedclassversion unsupported major.minior version 51.0
+   解决办法：修改JDK一致性，兼容1.5，然后重建所有源码。
+7、loadrunner为32位版本，因此只能支持32位JDK；
+8、较低版本编译的JAR可以在较高版本JDK上运行，反之则不行。JDK向前兼容。
+
+
+9、loadrunner11目前只支持jdk1.6版本，32位，更高版本不支持。因此导入的类库必须在1.6及以下版本编译，否则
+   报错：java.lang.unsupportedclassversion unsupported major.minior
+   loadrunner12目前已经支持jdk1.7版本，同样只能支持32位版本。
+   
+   
+java脚本场景运行时注意事项：   
+1、将jar包文件添加到脚本文件；
+2、将configs等文件夹文件逐一添加到场景运行时配置-文件；
+3、如果jar包已经添加到脚本文件，可以不配置classpath；
+4、无需将jar包传递到负载机system32目录下；
+5、loadrunner目前只支持JDK1.6,所有负载机需版本统一；
+6、配置运行
+
+
+你好
